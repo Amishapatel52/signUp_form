@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Form</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        text-align: center;
+        background: whitesmoke;
+        margin: 200px;
+        width: 400px;
+        height: 200px;
+        padding: 30px;
+    }
+    .inpt{
+        margin-bottom: 15px;
+    }
+    .btn {
+        padding: 8px 10px;
+        background-color:darkblue;
+        color: white;
+    }
+    h2 {
+        margin: 0;
+        padding-bottom: 10px;
+
+    }
+</style>
+<body>
+
+
+<div class="container">
+    <h2>Sign Up Form</h2>
+    <form id="signupForm">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" class="inpt" id="firstName" name="firstName" required>
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" class="inpt"id="lastName" name="lastName" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" class="inpt"id="email" name="email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password"class="inpt" id="password" name="password" required>
+  </div>
+  <div>
+    <button class="btn" type="submit">Submit</button>
+  </div>
+</form>
+<br><br>
+<div id="output"></div>
+</div>
+
+<script>
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    // Construct output string
+    var outputString = "Sign Up Details:<br><br>";
+    outputString += "First Name: " + firstName + "<br>";
+    outputString += "Last Name: " + lastName + "<br>";
+    outputString += "Email: " + email + "<br>";
+    outputString += "Password: " + password;
+
+    // Display output
+    document.getElementById('output').innerHTML = outputString;
+  });
+</script>
+
+</body>
+</html>
